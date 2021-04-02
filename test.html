@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        /* width: 27px;
+        height: 27px;
+        border: 27px solid; */
+        /* border-image: url(./box.png) 27 27 27 27 fill repeat stretch; */
+        /* width: 0;
+        height: 0; */
+        /* border: 100px solid yellow;
+        border-color: transparent transparent #333 transparent; */
+        /* border-left: 50px solid #333; */
+    }
+</style>
+<body>
+    <div class="reflect"></div>
+</body>
+<script>
+    //创建Dragon
+        // function Dragon(name) {
+        //     this.name = name;
+        // }
+
+        // //创建一个说话的函数
+        // function say(content) {
+        //     console.log(this.name + ' : ' + content)
+        // }
+
+        // //模拟原生call函数
+        // Function.prototype.myCall = function (context) {
+        //     context = context || window;  //(指的是con)
+        //     var args = [];
+        //     context.fn = this;           // 把Parent 函数赋值给 con
+
+        //     for (var i = 1; i < arguments.length; i++) {
+        //         args.push(arguments[i]);  // 获取传如的参数索引从1开始
+        //     };
+
+        //     context.fn(...args); //  con调用Parent方法
+        //     delete context.fn;  
+        // };
+
+        // //实例化一个名字为'foo'的龙
+        // var foo = new Dragon('foo')
+
+        // //让foo说话
+        // say.myCall(foo, 'I can talk!')
+        // 实现new方法
+    //     function myNew(fn) {
+    //         let obj = {}
+    //         obj = Object.create(fn.prototype)
+    //         let args = Array.prototype.slice.call(arguments, 1) // 获取除去fn之外的参数
+    //         let result = fn.call(obj, ...args)
+    //         return obj;
+    //     }
+    //     function foo() {
+    //         this.name = 'ciel'
+    //         this.arg = arguments[0]
+    //     }
+    //     foo.prototype.callName = function () {
+    //         console.log(this.name)
+    //     }
+    //     // 测试
+    //     let test = myNew(foo, 'hhh', '123', 'saf')
+    //     test.callName()
+    //     console.log(test.arg)
+
+    //     // 实现call方法
+    //    Function.prototype.myApply = function (thisArg, args = Symbol.for('args')) {
+    //        const fn = Symbol('fn');
+    //        thisArg[fn] = this || window;
+    //        args === Symbol.for('args') ? thisArg[fn]() : thisArg[fn](...args);
+    //        delete thisArg[fn];
+    //    }
+    //    Function.prototype.myCall = function (thisArg) {
+    //        const fn = Symbol('fn');
+    //        thisArg[fn] = this || window;
+    //        const args = Array.form(arguments).slice(1);
+    //        args.length ? thisArg[fn](...args) : thisArg[fn]();
+    //        delete thisArg[fn];
+    //    }
+    //    Function.prototype.myBind = function (thisArg) {
+    //        const fn = Symbol('fn');
+    //        thisArg[fn] = this || window;
+    //        const f = thisArg[fn];
+    //        delete thisArg[fn];
+    //        const args = Array.form(arguments).slice(1);
+    //        return function () {
+    //            const arg = args.concat(...arguments);
+    //            f(...arg);
+    //        }
+    //    }
+
+    function createFunctions() {
+            var result = new Array();
+            for (var i = 0; i < 10; i++) {
+                result[i] = i;
+            }
+            return result
+        }
+        createFunctions()
+</script>
+</html>
